@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=XMonad Gnome
+Comment=XMonad inside Gnome
+Exec=xmonad.start
+TryExec=xmonad.start
+Icon=
+Type=Application
+X-Ubuntu-Gettext-Domain=gnome-session-2.0

@@ -1,0 +1,21 @@
+How to add a menu option to GDM to run XMonad inside GNOME (Ubuntu 10.04)
+
+
+When you apt-get install xmonad, it creates a drop down for GDM that lets you run xmonad alone. There are also instructions on the internet that will tell you how to run xmonad inside GNOME, but in doing so you'll have to change settings around in order to run metacity again.
+
+This will add a XMonad GNOME option to your menu. It will break your plain XMonad menu option, but your GNOME session will still work as you expect it to. (If you know how to not break the XMonad session, please let me know!)
+
+
+1. Put xmonad.start in /usr/local/bin. It should be chowned as root:root and chmod 755 permissions.
+
+This is just two line bash script that sets the WINDOW_MANAGER environment variable before calling gnome-session. It would be really awesome if this could be done in the .desktop file instead. Speaking of which...
+
+2. Put xmonad-gnome.desktop in /usr/share/xsessions, chown root:root, and chmod 744. 
+
+This tells gdm to stick XMonad Gnome in the sessions menu when you login.
+
+3. Put xmonad.hs in ~/.xmonad. 
+
+This seems to make xmonad play nicer inside GNOME but breaks the plain XMonad session. Oops. 
+
+There's extra stuff in there too to make it play nice with GNOME Do. (Since dmenu doesn't seem to make sense with gnome, but autocompletion is still a nice perk!)

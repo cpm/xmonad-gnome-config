@@ -1,0 +1,5 @@
+#!/bin/bash
+
+export WINDOW_MANAGER=xmonad
+gnome-session
+
